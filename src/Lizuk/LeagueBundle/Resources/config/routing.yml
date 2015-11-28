@@ -1,0 +1,3 @@
+lizuk_league_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LizukLeagueBundle:Default:index }
