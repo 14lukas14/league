@@ -1,3 +1,26 @@
+lizuk_social:
+    resource: "@LizukSocialBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lizuk_stats:
+    resource: "@LizukStatsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lizuk_match:
+    resource: "@LizukMatchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lizuk_league:
+    resource: "@LizukLeagueBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lizuk_main:
+    resource: "@LizukMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "fos_routing.yml"
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
