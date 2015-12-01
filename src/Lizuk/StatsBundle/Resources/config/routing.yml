@@ -1,0 +1,3 @@
+lizuk_stats_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LizukStatsBundle:Default:index }

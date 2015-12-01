@@ -1,0 +1,4 @@
+services:
+#    lizuk_social.example:
+#        class: Lizuk\SocialBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

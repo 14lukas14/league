@@ -17,6 +17,11 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
+            new Lizuk\MainBundle\LizukMainBundle(),
+            new Lizuk\LeagueBundle\LizukLeagueBundle(),
+            new Lizuk\MatchBundle\LizukMatchBundle(),
+            new Lizuk\StatsBundle\LizukStatsBundle(),
+            new Lizuk\SocialBundle\LizukSocialBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
