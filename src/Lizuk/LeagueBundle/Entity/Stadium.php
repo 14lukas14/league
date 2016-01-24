@@ -25,7 +25,7 @@ class Stadium
     /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="name", type="string", length=100)
      */
     protected $name;
 

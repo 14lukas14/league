@@ -29,7 +29,7 @@ class Punishment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(name="created_at", type="datetime")
      */
     protected $createdAt;
 
@@ -44,21 +44,21 @@ class Punishment
     /**
      * @var string
      *
-     * @ORM\Column(type="PunishmentType")
+     * @ORM\Column(name="type", type="punishment_type")
      */
     protected $type;
 
     /**
      * @var integer
      *
-     * @ORM\Column(type="smallint", nullable=true)
+     * @ORM\Column(name="number", type="smallint", nullable=true)
      */
     protected $number;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(name="comment", type="string", nullable=true)
      */
     protected $comment;
 

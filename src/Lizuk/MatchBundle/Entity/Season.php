@@ -26,14 +26,14 @@ class Season
     /**
      * @var string
      *
-     * @ORM\Column(type="string", name="name")
+     * @ORM\Column(type="string", name="name", length=20)
      */
     protected $name;
 
     /**
      * @var League[] | ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Lizuk\LeagueBundle\Entity\League")
+     * @ORM\ManyToMany(targetEntity="Lizuk\LeagueBundle\Entity\League", inversedBy="seasons")
      * @ORM\JoinTable(name="le_league_seasons",
      *      joinColumns={@ORM\JoinColumn(name="season_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="league_id", referencedColumnName="id", unique=true)}

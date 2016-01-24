@@ -1,0 +1,237 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div id="top">
+        <div id="header-div">
+            {% block header %}
+                {% block header_logo %}
+                    <div id="header-logo">
+                            {#{% image '@LizukMainBundle/Resources/public/images/logo_all.jpg' %}
+                                <img src="{{ asset_url }}" alt="Logo" style="width: 100%" />
+                            {% endimage %}#}
+                        <div class="row col-xs-12">
+                            <div class="col-xs-12" style="height: 20%"></div>
+                            <div class="col-xs-9"></div>
+                            <div id="header-logo-content" class="col-xs-3">
+                                <h3 class="text-center">Panel użytkownika</h3>
+                                <div class="row col-xs-12">
+                                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                                        {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
+                                        <div class="row">
+                                            <div class="col-xs-3"><label for="login-field">Login</label></div>
+                                            <div class="col-xs-9">
+                                                <input class="form-control input-login-small" id="login-field" name="_username" type="text" placeholder="Login">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-3"><label for="password-field">Hasło</label></div>
+                                            <div class="col-xs-9">
+                                                <input class="form-control input-login-small" id="password-field" name="_password" type="password" placeholder="Hasło">
+                                            </div>
+                                        </div>
+                                        <a href="#">Zarejestruj się</a> <button type="submit" class="btn btn-primary btn-xs pull-right">Zaloguj</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-12" style="height: 20%"></div>
+                        </div>
+                    </div>
+                {% endblock %}
+                {% block menu_top %}
+                    <div>
+                        <ol id="menu-top">
+                            <li><a href="#">link - 1</a>
+                                <ul>
+                                    <li><a href="#">link - 1</a></li>
+                                    <li><a href="#">link - 2</a></li>
+                                    <li><a href="#">link - 3</a></li>
+                                    <li><a href="#">link - 4</a></li>
+                                    <li><a href="#">link - 5</a></li>
+                                    <li><a href="#">link - 6</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">link - 2</a>
+                                <ul>
+                                    <li><a href="#">link - 1</a></li>
+                                    <li><a href="#">link - 2</a></li>
+                                    <li><a href="#">link - 3</a></li>
+                                    <li><a href="#">link - 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">link - 3</a>
+                                <ul>
+                                    <li><a href="#">link - 1</a></li>
+                                    <li><a href="#">link - 2</a></li>
+                                    <li><a href="#">link - 3</a></li>
+                                    <li><a href="#">link - 4</a></li>
+                                    <li><a href="#">link - 5</a></li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                {% endblock %}
+                {% block search_top %}
+                    <div id="search-top">
+                        <div class="col-xs-6 vertical">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="search-field" class="sr-only">Wyszukaj na stronie</label>
+                                    <input class="form-control input-search-small" id="search-field" name="search" type="text" placeholder="Wyszukaj..">
+                                </div>
+                                <button type="button" class="btn btn-xs btn" style="background-image: linear-gradient(#eee, #fff, #eee);"><span class="glyphicon glyphicon-search"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endblock %}
+        </div>
+        <div id="left-sidebar-div">
+            {% block sidebar_left %}
+                <div id="left-table-1">
+                    <div class="left-table-header" style="padding: 1px;">
+                        <h5>Tabela - II liga</h5>
+                    </div>
+                    <table class="table table-striped" style="font-size: 75%;">
+                        <thead>
+                        <tr>
+                            <th>LP.</th>
+                            <th>Drużyna</th>
+                            <th>Punkty</th>
+                            <th>Bramki</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Stomil Olsztyn</td>
+                            <td>34</td>
+                            <td>15-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Zagłębie LKubin</td>
+                            <td>32</td>
+                            <td>11-1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Zorza Wilkszyn</td>
+                            <td>25</td>
+                            <td>2-31</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Termalica Nieciecza Bielsko-Biała</td>
+                            <td>24</td>
+                            <td>15-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Stomil Olsztyn</td>
+                            <td>34</td>
+                            <td>15-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Stomil Olsztyn</td>
+                            <td>34</td>
+                            <td>15-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Stomil Olsztyn</td>
+                            <td>34</td>
+                            <td>15-11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Stomil Olsztyn</td>
+                            <td>34</td>
+                            <td>15-11</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endblock %}
+        </div>
+        <div id="right-sidebar-div">
+            {% block sidebar_right %}
+                <div id="right-table-1">
+                    <div class="right-table-header" style="padding: 1px;">
+                        <h5>Tabela - II liga</h5>
+                    </div>
+                    <table class="table table-striped" style="font-size: 75%;">
+                        <thead>
+                            <tr>
+                                <th>LP.</th>
+                                <th>Drużyna</th>
+                                <th>Punkty</th>
+                                <th>Bramki</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Stomil Olsztyn</td>
+                                <td>34</td>
+                                <td>15-11</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Zagłębie LKubin</td>
+                                <td>32</td>
+                                <td>11-1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Zorza Wilkszyn</td>
+                                <td>25</td>
+                                <td>2-31</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Termalica Nieciecza Bielsko-Biała</td>
+                                <td>24</td>
+                                <td>15-11</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Stomil Olsztyn</td>
+                                <td>34</td>
+                                <td>15-11</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Stomil Olsztyn</td>
+                                <td>34</td>
+                                <td>15-11</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Stomil Olsztyn</td>
+                                <td>34</td>
+                                <td>15-11</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Stomil Olsztyn</td>
+                                <td>34</td>
+                                <td>15-11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endblock %}
+        </div>
+        <div id="content-div">
+            {% block content %}
+                Treść strony
+            {% endblock %}
+        </div>
+        <div id="footer-div">
+            {% block footer %}
+                Stopka serwisu
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

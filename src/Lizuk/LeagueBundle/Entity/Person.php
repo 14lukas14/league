@@ -23,28 +23,28 @@ class Person
     /**
      * @var integer
      *
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=11)
      */
     protected $pesel;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="GenderType")
+     * @ORM\Column(type="gender_type")
      */
     protected $gender;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=40)
      */
     protected $firstName;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=40)
      */
     protected $lastName;
 

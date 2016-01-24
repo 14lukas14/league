@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PlayerPerformance
  *
- * @ORM\Table()
+ * @ORM\Table(name="le_player_performance")
  * @ORM\Entity
  */
 class PlayerPerformance
@@ -20,7 +20,6 @@ class PlayerPerformance
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
 
     /**
      * Get id

@@ -1,0 +1,157 @@
+html, body {
+    background-color: #fff;
+    color: #000;
+}
+
+#top {
+    background: #fff;
+    width: 90%;
+    margin: auto;
+}
+
+#header-div {
+    width: 100%;
+    line-height: 0;
+}
+
+#header-div #header-logo {
+    margin: auto;
+    width: 100%;
+    position: relative;
+    background-image: url('../images/logo_all.jpg');
+}
+
+#left-sidebar-div {
+    width: 300px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background-color: #ccc;
+}
+
+#right-sidebar-div {
+    width: 300px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    background-color: #ccc;
+}
+
+#content-div {
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: #fff;
+}
+
+#footer-div {
+    clear: both;
+    background-color: #888;
+}
+
+/* ------------------------ TOP MENU CSS ------------------------ */
+/* wygląd elementu - ol */
+#menu-top {
+    width: 100%;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    background-color: #37883c;
+    background-image:linear-gradient(#FFF 0%, #36883c 15%, #37883c 35%, #37883c 60%, #36883c 85%, #FFF 100%);
+}
+
+/* naprawa wysokości elementu - ol */
+#menu-top:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+/* wygląd elementów - li */
+#menu-top > li {
+    float:left;
+}
+
+/* pierwszy element - li - elementu o identyfikatorze menu */
+#menu-top > li {
+    width:10%;
+}
+
+/* wygląd elementów - a */
+#menu-top > li > a {
+    display:block;
+    padding:15px;
+    text-decoration:none;
+    text-align:center;
+    color: #111111;
+    box-shadow:0 0 0 1px #FFF inset;
+    background-color: #37883c;
+    background-image:linear-gradient(#FFF 0%, #36883c 15%, #37883c 35%, #37883c 60%, #36883c 85%, #FFF 100%);
+}
+
+/* wygląd elementów - a - po najechaniu kursorem myszki na element - li */
+#menu-top > li:hover > a, #menu-top > li:hover > a:hover {
+    color:#000;
+    background-color: #37883c;
+    background-image:linear-gradient(#027a00, #03ad00, #027a00);
+    text-decoration: none;
+}
+
+/* -------------------- ROZWIJANA CZĘŚĆ MENU CSS -------------------- */
+/* wygląd elementów - li - rodzica każdej części rozwijanej menu CSS */
+#menu-top > li {
+    position:relative;
+}
+
+/* wygląd elementów - ul */
+#menu-top > li > ul {
+    width:100%;
+    display:none;
+    position:absolute;
+    z-index:1;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    background-color:#00a65a;
+    background-image:linear-gradient(#027a00, #03ad00, #027a00);
+}
+
+/* wygląd elementów - ul - po najechaniu kursorem myszki na element - li */
+#menu-top > li:hover > ul {
+    display:block;
+}
+
+/* wygląd elementów - li */
+#menu-top > li > ul > li {
+    box-shadow:0 -4px 4px -4px #AAA;
+}
+
+/* wygląd pierwszego dziecka elementu typu - li */
+#menu-top > li > ul > li:first-child {
+    box-shadow:none;
+}
+
+/* wygląd ostatniego dziecka elementu typu - li */
+#menu-top > li > ul > li:last-child {
+    box-shadow:0 -4px 4px -4px #AAA, 0 4px 4px -4px #AAA;
+}
+
+/* wygląd elementów - a */
+#menu-top > li > ul > li > a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    color:#000;
+}
+
+/* wygląd elementów - a - po najechaniu kursorem myszki na element - li */
+#menu-top > li > ul > li:hover > a {
+    background-color:#00a65a;
+    background-image:linear-gradient(#027a00, #03ad00, #027a00);
+}
+
+#header-div #search-top {
+    width: 100%;
+    height: 30px;
+    background-color: #eee;
+    background-image:linear-gradient(#eee, #fff, #eee);
+}

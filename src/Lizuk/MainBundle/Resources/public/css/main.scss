@@ -1,0 +1,178 @@
+@import "compass/css3";
+
+html, body {
+    background-color: #fff;
+    color: #000;
+}
+
+#top {
+    background: #fff;
+    width: 90%;
+    margin: auto;
+}
+
+#header-div {
+    width: 100%;
+    line-height: 0;
+}
+
+#header-div {
+    #header-logo {
+        @include box-sizing(content-box);
+        margin: auto;
+        width: 100%;
+        position: relative;
+        //@include cover-background('../images/logo_all.jpg');
+        background: no-repeat center right;
+        @include background-size(cover);
+        background-image: url('../images/logo_cale2.jpg');
+
+        > div {
+            height: 250px;
+        }
+
+        #header-logo-content {
+            background: no-repeat center right;
+            @include background-size(cover);
+            @include opacity(0.7);
+            background-image: url('../images/login.jpg');
+            height: 60%;
+            padding-top: 10px;
+            color: rgb(86, 81, 81);
+
+            > h3 {
+                margin-top: 0;
+            }
+
+            form {
+                line-height: 2;
+
+                .input-login-small {
+                    height: 25px;
+                    padding: 3px 6px;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    #search-top {
+        width: 100%;
+        height: 30px;
+        background-color: #eee;
+        background-image: linear-gradient(#eee, #fff, #eee);
+
+        > div {
+            padding-top: 5px;
+
+            .input-search-small {
+                height: 22px;
+                padding: 3px 6px;
+                font-size: 12px;
+                line-height: 1.5;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+#left-sidebar-div {
+    width: 300px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
+
+    #left-table-1 {
+        border-right: solid 1px black;
+        border-bottom: solid 1px black;
+        padding: 3px;
+
+        .left-table-header {
+            background-color: rgba(255,255,255,0.94);
+            @include filter-gradient(#ffffff, #90bf7f, horizontal);
+            @include background-image(linear-gradient(left bottom, rgba(68,167,22,0.98) 0%, rgba(136,187,114,0.98) 17%, rgba(144,191,127,0.98) 20%, rgba(190,213,200,0.96) 37%, rgba(219,230,224,0.94) 52%, rgba(247,247,247,0.94) 67%, rgba(255,255,255,0.94) 100%));
+
+            h5 {
+                letter-spacing: -1px;
+                font-size: 1.5em;
+                font-weight: 800;
+                color: darkcyan;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#right-sidebar-div {
+    width: 300px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
+
+    #right-table-1 {
+        border-left: solid 1px black;
+        border-bottom: solid 1px black;
+        padding: 3px;
+
+        .right-table-header {
+            background-color: rgba(255,255,255,0.94);
+            @include filter-gradient(#ffffff, #90bf7f, horizontal);
+            @include background-image(linear-gradient(left top, rgba(255,255,255,0.94) 0%, rgba(247,247,247,0.94) 33%, rgba(219,230,224,0.94) 48%, rgba(190,213,200,0.96) 63%, rgba(144,191,127,0.98) 80%, rgba(136,187,114,0.98) 83%, rgba(68,167,22,0.98) 100%));
+
+            h5 {
+                letter-spacing: -1px;
+                font-size: 1.5em;
+                font-weight: 800;
+                color: darkcyan;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#content-div {
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: #fff;
+    padding: 3px;
+}
+
+#footer-div {
+    clear: both;
+    height: 150px;
+    background-image: url('../images/ball-footer-bg.jpg'), url('../images/footer-bg.jpg');
+    background-repeat: no-repeat, repeat-x;
+    background-size: contain, contain;
+    background-color: #888;
+}
+@media screen and (min-width: 1251px){
+    #top {
+        width: 1240px;
+    }
+
+    #header-div {
+        #header-logo {
+            height: 250px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px){
+    #header-div {
+        #header-logo {
+            height: 200px;
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px){
+    #header-div {
+        #header-logo {
+            height: 100px;
+        }
+    }
+}

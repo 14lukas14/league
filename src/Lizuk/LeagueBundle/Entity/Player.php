@@ -4,20 +4,26 @@ namespace Lizuk\LeagueBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Lizuk\MainBundle\Traits\SoftDeleteAble;
 use Lizuk\MatchBundle\Entity\MatchEvent;
 
 /**
  * Player
  *
  * @ORM\Table(name="le_player")
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  * @ORM\Entity
  */
 class Player extends Person
 {
+    use SoftDeleteAble;
+
     /**
      * @var Team
      *
      * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
+     * @ORM\JoinColumn(name="team_id", referencedColumnName="id")
      */
     protected $team;
 

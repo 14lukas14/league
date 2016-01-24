@@ -24,33 +24,33 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=50)
      */
     protected $city;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="ProvinceType")
+     * @ORM\Column(type="province_type")
      */
     protected $province;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=60)
      */
     protected $street;
 
     /**
      * @var string
-     * @ORM\Column(type="string", name="post_code_number")
+     * @ORM\Column(type="string", name="post_code_number", length=6)
      */
     protected $postCodeNumber;
 
     /**
      * @var string
-     * @ORM\Column(type="string", name="post_code_city")
+     * @ORM\Column(type="string", name="post_code_city", length=60)
      */
     protected $postCodeCity;
 
@@ -64,7 +64,7 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=6)
      */
     protected $flat;
 

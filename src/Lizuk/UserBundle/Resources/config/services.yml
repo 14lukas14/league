@@ -1,0 +1,9 @@
+services:
+#    lizuk_user.example:
+#        class: Lizuk\Bundle\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    acme_user.password_resetting:
+        class: Lizuk\UserBundle\Events\EventListener\PasswordResettingListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }

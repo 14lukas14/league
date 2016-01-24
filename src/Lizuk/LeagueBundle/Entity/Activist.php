@@ -3,7 +3,7 @@
 namespace Lizuk\LeagueBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Lizuk\MainBundle\Entity\Person;
+use Lizuk\UserBundle\Entity\Person;
 
 /**
  * Activist

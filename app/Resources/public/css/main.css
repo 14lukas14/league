@@ -1,0 +1,37 @@
+html, body {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#header-div {
+    background-color: #888;
+}
+
+#left-sidebar-div {
+    width: 150px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background-color: #ccc;
+}
+
+#right-sidebar-div {
+    width: 150px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    background-color: #ccc;
+}
+
+#content-div {
+    margin-left: 150px;
+    margin-right: 150px;
+    background-color: #fff;
+}
+
+#footer-div {
+    clear: both;
+    background-color: #888;
+}

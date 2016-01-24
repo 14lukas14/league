@@ -25,14 +25,14 @@ class Team
     /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=100)
      */
     protected $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=50)
      */
     protected $city;
 
@@ -47,6 +47,7 @@ class Team
      * @var League
      *
      * @ORM\ManyToOne(targetEntity="League", inversedBy="teams")
+     * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
      */
     protected $league;
 
@@ -69,6 +70,7 @@ class Team
      * @var Stadium
      *
      * @ORM\ManyToOne(targetEntity="Stadium", inversedBy="teams")
+     * @ORM\JoinColumn(name="stadium_id", referencedColumnName="id")
      */
     protected $stadium;
 

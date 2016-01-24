@@ -1,0 +1,9 @@
+services:
+    sonata.admin.news:
+        class: Lizuk\SocialBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "News" }
+        arguments:
+            - ~
+            - Lizuk\SocialBundle\Entity\News
+            - LizukSocialBundle:News

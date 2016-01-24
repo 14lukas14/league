@@ -26,27 +26,30 @@ class MatchEvent
      * @var Match
      *
      * @ORM\ManyToOne(targetEntity="Match", inversedBy="events")
-     * @ORM\JoinColumn(name="match_id")
+     * @ORM\JoinColumn(name="match_id", referencedColumnName="id")
      */
     protected $match;
 
     /**
      * @var string
-     * @ORM\Column(type="MatchEventType")
+     *
+     * @ORM\Column(type="match_event_type")
      */
     protected $type;
 
     /**
      * @var Player
      *
-     * @ORM\OneToMany(targetEntity="Lizuk\LeagueBundle\Entity\Player", mappedBy="events")
+     * @ORM\OneToOne(targetEntity="Lizuk\LeagueBundle\Entity\Player", mappedBy="events")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
 
     /**
      * @var Player
      *
-     * @ORM\OneToMany(targetEntity="Lizuk\LeagueBundle\Entity\Player", mappedBy="anotherEvents")
+     * @ORM\OneToOne(targetEntity="Lizuk\LeagueBundle\Entity\Player", mappedBy="anotherEvents")
+     * @ORM\JoinColumn(name="second_user_id", referencedColumnName="id", nullable=true)
      */
     protected $secondUser;
 
@@ -63,7 +66,6 @@ class MatchEvent
      * @ORM\Column(type="string", nullable=true)
      */
     protected $comment;
-
 
     /**
      * Get id

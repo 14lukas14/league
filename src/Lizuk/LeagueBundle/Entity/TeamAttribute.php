@@ -23,7 +23,7 @@ class TeamAttribute extends Attribute
      * @var Team
      *
      * @ORM\ManyToOne(targetEntity="Team", inversedBy="attributes", fetch="EAGER")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, name="team_id", referencedColumnName="id")
      */
     protected $team;
 

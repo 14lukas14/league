@@ -4,7 +4,7 @@ namespace Lizuk\LeagueBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Lizuk\MainBundle\Entity\Referee;
+use Lizuk\UserBundle\Entity\Referee;
 use Lizuk\MatchBundle\Entity\Round;
 use Lizuk\MatchBundle\Entity\Season;
 
@@ -30,7 +30,7 @@ class League
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string")
+     * @ORM\Column(name="name", type="string", length=255)
      */
     protected $name;
 
@@ -75,6 +75,10 @@ class League
      * @var ArrayCollection | Season
      *
      * @ORM\ManyToMany(targetEntity="Lizuk\MatchBundle\Entity\Season", mappedBy="leagues")
+     * @ORM\JoinTable(name="le_league_seasons",
+     *      joinColumns={@ORM\JoinColumn(name="league_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="season_id", referencedColumnName="id", unique=true)}
+     *     )
      */
     protected $seasons;
 
@@ -82,13 +86,21 @@ class League
      * @var ArrayCollection | Round[]
      *
      * @ORM\OneToMany(targetEntity="Lizuk\MatchBundle\Entity\Round", mappedBy="league")
+     * @ORM\JoinTable(name="le_league_rounds",
+     *      joinColumns={@ORM\JoinColumn(name="league_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="round_id", referencedColumnName="id", unique=true)}
+     *     )
      */
     protected $rounds;
 
     /**
      * @var ArrayCollection | Referee[]
      *
-     * @ORM\ManyToMany(targetEntity="Lizuk\MainBundle\Entity\Referee", mappedBy="leagues")
+     * @ORM\ManyToMany(targetEntity="Lizuk\UserBundle\Entity\Referee", mappedBy="leagues")
+     * @ORM\JoinTable(name="le_league_referees",
+     *      joinColumns={@ORM\JoinColumn(name="league_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="referee_id", referencedColumnName="id", unique=true)}
+     *     )
      */
     protected $referees;
 
