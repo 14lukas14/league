@@ -1,0 +1,5 @@
+{% extends "::layout.html.twig" %}
+
+{% block page_content %}
+    {{ render(controller('LizukSocialBundle:News:index', {'_sonata_admin': 'sonata.admin.news'})) }}
+{% endblock %}

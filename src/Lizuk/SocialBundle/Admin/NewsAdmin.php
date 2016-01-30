@@ -32,9 +32,13 @@ class NewsAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title', 'text', array('label' => 'Post Title'))
+            ->add('title', 'text', array('label' => 'Tytuł'))
+            ->add('description', 'text', array('label' => 'Opis'))
+            ->add('introduction', 'text', array('label' => 'Wstęp'))
             ->add('author', 'entity', array('class' => 'Lizuk\UserBundle\Entity\User'))
             ->add('body') //if no type is specified, SonataAdminBundle tries to guess it
+            ->add('image')
+            ->add('source', 'text', array('label' => 'Źródło'))
         ;
     }
 

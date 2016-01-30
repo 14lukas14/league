@@ -18,12 +18,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            new Lizuk\MainBundle\LizukMainBundle(),
-            new Lizuk\LeagueBundle\LizukLeagueBundle(),
-            new Lizuk\MatchBundle\LizukMatchBundle(),
-            new Lizuk\StatsBundle\LizukStatsBundle(),
-            new Lizuk\SocialBundle\LizukSocialBundle(),
-            new Lizuk\UserBundle\LizukUserBundle(),
             new Fresh\DoctrineEnumBundle\FreshDoctrineEnumBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
@@ -36,6 +30,14 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Craue\FormFlowBundle\CraueFormFlowBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+
+            new Lizuk\MainBundle\LizukMainBundle(),
+            new Lizuk\LeagueBundle\LizukLeagueBundle(),
+            new Lizuk\MatchBundle\LizukMatchBundle(),
+            new Lizuk\StatsBundle\LizukStatsBundle(),
+            new Lizuk\SocialBundle\LizukSocialBundle(),
+            new Lizuk\UserBundle\LizukUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

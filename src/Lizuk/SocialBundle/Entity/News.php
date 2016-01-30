@@ -9,6 +9,7 @@ use Lizuk\LeagueBundle\Entity\Team;
 use Lizuk\MainBundle\Entity\File;
 use Lizuk\MainBundle\Traits\SoftDeleteAble;
 use Lizuk\UserBundle\Entity\User;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * News
@@ -68,7 +69,7 @@ class News
     /**
      * @var Category | ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Lizuk\SocialBundle\Entity\Category", inversedBy="newses")
+     * @ORM\ManyToMany(targetEntity="Lizuk\SocialBundle\Entity\Category", mappedBy="newses")
      */
     protected $categories;
 
@@ -110,6 +111,7 @@ class News
      *
      * @ORM\OneToOne(targetEntity="Lizuk\MainBundle\Entity\File")
      * @ORM\JoinColumn(nullable=true)
+     * @Assert\File(maxSize="6000000")
      */
     protected $image;
 
@@ -136,10 +138,22 @@ class News
      */
     protected $source;
 
+    /**
+     * @var Tag | ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Lizuk\SocialBundle\Entity\Tag")
+     * @ORM\JoinTable(name="le_news_tag",
+     *      joinColumns={@ORM\JoinColumn(name="news_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="id")}
+     *      )
+     */
+    protected $tags;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->allowedUsers = new ArrayCollection();
+        $this->tags = new ArrayCollection();
         $this->createdAt = new \DateTime();
     }
 
@@ -216,7 +230,7 @@ class News
     }
 
     /**
-     * @return Person
+     * @return User
      */
     public function getAuthor()
     {
@@ -224,7 +238,7 @@ class News
     }
 
     /**
-     * @param Person $author
+     * @param User $author
      */
     public function setAuthor($author)
     {
@@ -253,13 +267,13 @@ class News
     }
 
     /**
-     * @param Category
+     * @param Category $category
      * @return $this
      */
-    public function removeNews(News $news)
+    public function removeCategory(Category $category)
     {
-        if ($this->newses->contains($news)) {
-            $this->newses->removeElement($news);
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
         }
 
         return $this;
@@ -298,7 +312,7 @@ class News
     }
 
     /**
-     * @return Person
+     * @return User
      */
     public function getUpdatedBy()
     {
@@ -306,7 +320,7 @@ class News
     }
 
     /**
-     * @param Person $updatedBy
+     * @param User $updatedBy
      */
     public function setUpdatedBy($updatedBy)
     {
@@ -314,7 +328,7 @@ class News
     }
 
     /**
-     * @return ArrayCollection|Person
+     * @return ArrayCollection|User
      */
     public function getAllowedUsers()
     {
@@ -322,7 +336,7 @@ class News
     }
 
     /**
-     * @param ArrayCollection|Person $allowedUsers
+     * @param ArrayCollection|User $allowedUsers
      */
     public function setAllowedUsers($allowedUsers)
     {
@@ -370,11 +384,61 @@ class News
     }
 
     /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
+    }
+
+    /**
      * @param League $league
      */
     public function setLeague($league)
     {
         $this->league = $league;
+    }
+
+    /**
+     * @return ArrayCollection|Tag
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param Tag $tag
+     * @return $this
+     */
+    public function addTag(Tag $tag)
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags->add($tag);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Tag $tag
+     * @return $this
+     */
+    public function removeTag(Tag $tag)
+    {
+        if ($this->tags->contains($tag)) {
+            $this->tags->removeElement($tag);
+        }
+
+        return $this;
     }
 
 }
